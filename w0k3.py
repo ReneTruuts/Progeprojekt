@@ -1,3 +1,4 @@
+import easygui
 g = input("Kas praegu on hommik, lõuna või õhtu: ")
 kell = input("Sisesta kellaaeg, mil sa kuskil olema pead: ")
 if g.lower() == "hommik":
@@ -27,7 +28,7 @@ if g.lower() == "lõuna":
     summa = a + b + c + e + d + f
     tunnid = summa // 60
     minutid = summa - (tunnid * 60)
-    print("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit.")
+    easygui.msgbox("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit.")
     
 
 
