@@ -1,6 +1,19 @@
-print("Hello world")
-print("Olen usin")
-from turtle import *
-for i in range(4):
-    forward(100)
-    right(90)
+import easygui
+easygui.msgbox("Oh, ja see ongi graafiline kasutajaliides")
+
+
+
+
+
+
+
+
+
+
+
+#print("Hello world")
+#print("Olen usin")
+##from turtle import *
+#for i in range(4):
+ #   forward(100)
+  #  right(90)
