@@ -1,19 +1,11 @@
 import easygui
-easygui.msgbox("Oh, ja see ongi graafiline kasutajaliides")
-
-
-
-
-
-
-
-
+easygui.msgbox("See ongi graafiline liides")
 
 
 
 #print("Hello world")
 #print("Olen usin")
-##from turtle import *
+#from turtle import *
 #for i in range(4):
  #   forward(100)
   #  right(90)
