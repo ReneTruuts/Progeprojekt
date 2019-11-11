@@ -1,4 +1,4 @@
-g = input("Kas praegu on hommik, päev või õhtu: ")
+g = input("Kas praegu on hommik, lõuna või õhtu: ")
 kell = input("Sisesta kellaaeg, mil sa kuskil olema pead: ")
 if g.lower() == "hommik":
     a = int(input("Palju aega (minutites) planeerid sa kulutada voodist püsti tõusmisele?"))
@@ -17,7 +17,7 @@ if g.lower() == "hommik":
     
     
     
-if g.lower() == "päev":
+if g.lower() == "lõuna":
     a = int(input("Palju aega (minutites) planeerid sa kulutada lõunasöögile?"))
     b = int(input("Palju aega (minutites) planeerid sa kulutada sarja vaatamisele?"))
     c = int(input("Palju aega (minutites) planeerid sa kulutada koristamisele?"))
