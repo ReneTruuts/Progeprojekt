@@ -1,6 +1,6 @@
 import easygui
 g = input("Kas praegu on hommik, lõuna või õhtu: ")
-kell = float(input("Sisesta kellaaeg, mil sa kuskil olema pead: "))
+kell = input("Sisesta kellaaeg, mil sa kuskil olema pead (formaadis tunnid:minutid): ")
 if g.lower() == "hommik":
     a = int(input("Palju aega (minutites) planeerid sa kulutada voodist püsti tõusmisele? "))
     b = int(input("Palju aega (minutites) planeerid sa kulutada duši all käimisele? "))
@@ -47,9 +47,12 @@ if g.lower() == "õhtu":
     summa = a + b + c + e + d + f
     tunnid = summa // 60
     minutid = summa - (tunnid * 60)
-    algnekell = kell - float(tunnid.minutid)
+    oigekell = kell.split(":")
+    valjatund = tunnid- float(oigekell[0])
+    valjaminutid = minutid - float(oigekell[1])
+
     easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit." + 
-            "Sa peaksid tegvusi alustama kell " + algnekell))
+            "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid)))
     
     
     
