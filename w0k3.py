@@ -22,7 +22,7 @@ if g.lower() == "hommik":
     valjatund = abs(tunnid- int(oigekell[0]))
     valjaminutid = abs(minutid - int(oigekell[1]))
 
-    easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit." + 
+    easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi ja " + str(minutid) + " minutit." + 
             "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
     
 if g.lower() == "lõuna":
@@ -40,7 +40,7 @@ if g.lower() == "lõuna":
     valjatund = abs(tunnid- int(oigekell[0]))
     valjaminutid = abs(minutid - int(oigekell[1]))
 
-    easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit." + 
+    easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi ja " + str(minutid) + " minutit." + 
             "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
     
 
@@ -62,8 +62,5 @@ if g.lower() == "õhtu":
     valjatund = abs(tunnid- int(oigekell[0]))
     valjaminutid = abs(minutid - int(oigekell[1]))
 
-    easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit." + 
+    easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi ja " + str(minutid) + " minutit." + 
             "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
-    
-    
-    
