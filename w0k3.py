@@ -1,6 +1,8 @@
 import easygui
+
 g = input("Kas praegu on hommik, lõuna või õhtu: ")
 kell = input("Sisesta kellaaeg, mil sa kuskil olema pead (formaadis tunnid:minutid): ")
+
 if g.lower() == "hommik":
     a = int(input("Palju aega (minutites) planeerid sa kulutada voodist püsti tõusmisele? "))
     b = int(input("Palju aega (minutites) planeerid sa kulutada duši all käimisele? "))
@@ -8,12 +10,12 @@ if g.lower() == "hommik":
     d = int(input("Palju aega (minutites) planeerid sa kulutada muule kehahooldusele (kreemitamine jne)? "))
     e = int(input("Palju aega (minutites) planeerid sa kulutada hommikusöögile? "))
     f = int(input("Palju aega (minutites) planeerid sa kulutada nõude pesemisele/muudele koristustegevustele? "))
-    g = int(input("Palju aega (minutites) planeerid sa kulutada riietumisele? "))
-    h = int(input("Palju aega (minutites) planeerid sa kulutada meikimisele? "))
-    i = int(input("Palju aega (minutites) planeerid sa kulutada koti pakkimisele? "))
-    j = int(input("Palju aega (minutites) planeerid sa kulutada kohale jõudmisele? "))
-    k = int(input("Kui palju aega (minutites) kulub tegevustele, mida me Sinu käest ei küsinud? "))
-    summa = a + b + c + e + d + f + g + h + i + j + k 
+    h = int(input("Palju aega (minutites) planeerid sa kulutada riietumisele? "))
+    i = int(input("Palju aega (minutites) planeerid sa kulutada meikimisele? "))
+    j = int(input("Palju aega (minutites) planeerid sa kulutada koti pakkimisele? "))
+    k = int(input("Palju aega (minutites) planeerid sa kulutada kohale jõudmisele? "))
+    l = int(input("Kui palju aega (minutites) kulub tegevustele, mida me Sinu käest ei küsinud? "))
+    summa = a + b + c + e + d + f + h + i + j + k + l
     tunnid = summa // 60
     minutid = summa - (tunnid * 60)
     easygui.msgbox("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit.")
@@ -23,12 +25,13 @@ if g.lower() == "hommik":
     
 if g.lower() == "lõuna":
     a = int(input("Palju aega (minutites) planeerid sa kulutada lõunasöögile? "))
-    b = int(input("Palju aega (minutites) planeerid sa kulutada sarja vaatamisele? "))
-    c = int(input("Palju aega (minutites) planeerid sa kulutada koristamisele? "))
+    b = int(input("Palju aega (minutites) planeerid sa kulutada koristamisele? "))
+    c = int(input("Palju aega (minutites) planeerid sa kulutada sarja vaatamisele? "))
     d = int(input("Palju aega (minutites) planeerid sa kulutada enda korrastamisele? "))
     e = int(input("Palju aega (minutites) kulutad sa koti kokku pakkimisele? "))
-    f = int(input("Palju aega (minutites) kulutad sa kohalejõudmisele? "))
-    summa = a + b + c + e + d + f
+    f = int(input("Palju aega (minutites) kulutad sa kohale jõudmisele? "))
+    h = int(input("Kui palju aega (minutites) kulub tegevustele, mida me Sinu käest ei küsinud? "))
+    summa = a + b + c + d + e + f + h
     tunnid = summa // 60
     minutid = summa - (tunnid * 60)
     easygui.msgbox("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit.")
@@ -43,8 +46,9 @@ if g.lower() == "õhtu":
     c = int(input("Palju aega (minutites) planeerid sa kulutada meigile? "))
     d = int(input("Palju aega (minutites) planeerid sa kulutada riietumisele? "))
     e = int(input("Palju aega (minutites) planeerid sa kulutada soojendamisele? "))
-    f = int(input("Palju aega (minutites) kulutad sa kohalejõudmisele? "))
-    summa = a + b + c + e + d + f
+    f = int(input("Palju aega (minutites) kulutad sa kohale jõudmisele? "))
+    h = int(input("Kui palju aega (minutites) kulub tegevustele, mida me Sinu käest ei küsinud? "))
+    summa = a + b + c + e + d + f + h
     tunnid = summa // 60
     minutid = summa - (tunnid * 60)
     oigekell = kell.split(":")
