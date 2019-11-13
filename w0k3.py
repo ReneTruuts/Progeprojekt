@@ -18,10 +18,12 @@ if g.lower() == "hommik":
     summa = a + b + c + e + d + f + h + i + j + k + l
     tunnid = summa // 60
     minutid = summa - (tunnid * 60)
-    easygui.msgbox("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit.")
-    
-    
-    
+    oigekell = kell.split(":")
+    valjatund = abs(tunnid- int(oigekell[0]))
+    valjaminutid = abs(minutid - int(oigekell[1]))
+
+    easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit." + 
+            "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
     
 if g.lower() == "lõuna":
     a = int(input("Palju aega (minutites) planeerid sa kulutada lõunasöögile? "))
@@ -34,7 +36,12 @@ if g.lower() == "lõuna":
     summa = a + b + c + d + e + f + h
     tunnid = summa // 60
     minutid = summa - (tunnid * 60)
-    easygui.msgbox("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit.")
+    oigekell = kell.split(":")
+    valjatund = abs(tunnid- int(oigekell[0]))
+    valjaminutid = abs(minutid - int(oigekell[1]))
+
+    easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit." + 
+            "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
     
 
 
@@ -52,11 +59,11 @@ if g.lower() == "õhtu":
     tunnid = summa // 60
     minutid = summa - (tunnid * 60)
     oigekell = kell.split(":")
-    valjatund = tunnid- float(oigekell[0])
-    valjaminutid = minutid - float(oigekell[1])
+    valjatund = abs(tunnid- int(oigekell[0]))
+    valjaminutid = abs(minutid - int(oigekell[1]))
 
     easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit." + 
-            "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid)))
+            "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
     
     
     
