@@ -19,11 +19,18 @@ if g.lower() == "hommik":
     tunnid = summa // 60
     minutid = summa - (tunnid * 60)
     oigekell = kell.split(":")
-    valjatund = abs(tunnid- int(oigekell[0]))
-    valjaminutid = abs(minutid - int(oigekell[1]))
-
+    valjatund = int(oigekell[0]) - tunnid
+    valjaminutid = int(oigekell[1]) - minutid
+    if valjatund < 0:
+        valjatund = 24 - abs(valjatund)
+    if valjaminutid < 0:
+        valjatund = valjatund - 1
+        valjaminutid = abs(valjaminutid)
+    
+        
+    
     easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi ja " + str(minutid) + " minutit." + 
-            "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
+            "Sa peaksid ärkama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
     
 if g.lower() == "lõuna":
     a = int(input("Palju aega (minutites) planeerid sa kulutada lõunasöögile? "))
@@ -37,16 +44,18 @@ if g.lower() == "lõuna":
     tunnid = summa // 60
     minutid = summa - (tunnid * 60)
     oigekell = kell.split(":")
-    valjatund = abs(tunnid- int(oigekell[0]))
-    valjaminutid = abs(minutid - int(oigekell[1]))
-
-    easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi ja " + str(minutid) + " minutit." + 
-            "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
+    valjatund = int(oigekell[0]) - tunnid
+    valjaminutid = int(oigekell[1]) - minutid
+    if valjatund < 0:
+        valjatund = 24 - abs(valjatund)
+    if valjaminutid < 0:
+        valjatund = valjatund - 1
+        valjaminutid = abs(valjaminutid)
     
-
-
-
-
+    easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi ja " + str(minutid) + " minutit." + 
+            "Sa peaksid ärkama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
+    
+    
 if g.lower() == "õhtu":
     a = int(input("Palju aega (minutites) planeerid sa kulutada pesemisele? "))
     b = int(input("Palju aega (minutites) planeerid sa kulutada õhtusöögile? "))
@@ -59,8 +68,13 @@ if g.lower() == "õhtu":
     tunnid = summa // 60
     minutid = summa - (tunnid * 60)
     oigekell = kell.split(":")
-    valjatund = abs(tunnid- int(oigekell[0]))
-    valjaminutid = abs(minutid - int(oigekell[1]))
-
+    valjatund = int(oigekell[0]) - tunnid
+    valjaminutid = int(oigekell[1]) - minutid
+    if valjatund < 0:
+        valjatund = 24 - abs(valjatund)
+    if valjaminutid < 0:
+        valjatund = valjatund - 1
+        valjaminutid = abs(valjaminutid)
+    
     easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi ja " + str(minutid) + " minutit." + 
-            "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
+            "Sa peaksid ärkama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
