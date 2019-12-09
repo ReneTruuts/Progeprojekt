@@ -26,7 +26,9 @@ if vajutati == "hommik":
         valjatund = 24 - abs(valjatund)
     if valjaminutid < 0:
         valjatund = valjatund - 1
-        valjaminutid = abs(valjaminutid)
+        valjaminutid = 60 + valjaminutid
+    if valjaminutid == 0:
+        valjaminutid = str('00')
     
         
     
@@ -51,7 +53,9 @@ if vajutati == "lõuna":
         valjatund = 24 - abs(valjatund)
     if valjaminutid < 0:
         valjatund = valjatund - 1
-        valjaminutid = abs(valjaminutid)
+        valjaminutid = 60 + valjaminutid
+    if valjaminutid == 0:
+        valjaminutid = str('00')
     
     easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit." + 
             "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
@@ -75,7 +79,9 @@ if vajutati == "õhtu":
         valjatund = 24 - abs(valjatund)
     if valjaminutid < 0:
         valjatund = valjatund - 1
-        valjaminutid = abs(valjaminutid)
+        valjaminutid = 60 + valjaminutid
+    if valjaminutid == 0:
+        valjaminutid = str('00')
     
     easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit." + 
             "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
