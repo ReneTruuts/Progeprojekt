@@ -3,6 +3,7 @@ import easygui
 variandid = ["hommik", "lõuna", "õhtu"]
 vajutati = easygui.choicebox("Mis aeg päevast praegu on?", choices = variandid)
 kell = easygui.enterbox("Sisesta kellaaeg, mil sa kuskil olema pead (formaadis tunnid:minutid): ")
+fail = open('andmed.txt', 'w')
 
 if vajutati == "hommik":
     a = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada voodist püsti tõusmisele? ", lowerbound = 0, upperbound = 10000)
@@ -16,6 +17,8 @@ if vajutati == "hommik":
     j = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada koti pakkimisele? ", lowerbound = 0, upperbound = 10000)
     k = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada kohale jõudmisele? ", lowerbound = 0, upperbound = 10000)
     l = easygui.integerbox(msg = "Kui palju aega (minutites) kulub tegevustele, mida me Sinu käest ei küsinud? ", lowerbound = 0, upperbound = 10000)
+    fail.write(str(a) + "\n" + str(b) + "\n" + str(c) + "\n" + str(e) + "\n" + str(d) + "\n" + str(f) + "\n" + str(h) + "\n" + str(i) + "\n" + str(j) + "\n" + str(k) + "\n" + str(l))
+    fail.close()
     summa = a + b + c + e + d + f + h + i + j + k + l
     tunnid = summa // 60
     minutid = summa - (tunnid * 60)
@@ -43,6 +46,8 @@ if vajutati == "lõuna":
     e = easygui.integerbox(msg = "Palju aega (minutites) kulutad sa koti kokku pakkimisele? ", lowerbound = 0, upperbound = 10000)
     f = easygui.integerbox(msg = "Palju aega (minutites) kulutad sa kohale jõudmisele? ", lowerbound = 0, upperbound = 10000)
     h = easygui.integerbox(msg = "Kui palju aega (minutites) kulub tegevustele, mida me Sinu käest ei küsinud? ", lowerbound = 0, upperbound = 10000)
+    fail.write(str(a) + "\n" + str(b) + "\n" + str(c) + "\n" + str(e) + "\n" + str(d) + "\n" + str(f) + "\n" + str(h))
+    f.close()
     summa = a + b + c + d + e + f + h
     tunnid = summa // 60
     minutid = summa - (tunnid * 60)
@@ -69,6 +74,8 @@ if vajutati == "õhtu":
     e = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada soojendamisele? " , lowerbound = 0, upperbound = 10000)
     f = easygui.integerbox(msg = "Palju aega (minutites) kulutad sa kohale jõudmisele? " , lowerbound = 0, upperbound = 10000)
     h = easygui.integerbox(msg = "Kui palju aega (minutites) kulub tegevustele, mida me Sinu käest ei küsinud? " ,lowerbound = 0, upperbound = 10000)
+    fail.write(str(a) + "\n" + str(b) + "\n" + str(c) + "\n" + str(e) + "\n" + str(d) + "\n" + str(f) + "\n" + str(h))
+    f.close()
     summa = a + b + c + e + d + f + h
     tunnid = summa // 60
     minutid = summa - (tunnid * 60)
