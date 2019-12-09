@@ -1,162 +1,129 @@
-from tkinter import *
-import sys
-top = Tk()
-mb = Menubutton(exit, Text="Sulge programm", relief = RAISED)
+import PySimpleGUI as sg
 
-variandid = ["hommik", "lõuna", "õhtu"]
-vajutati = ("Mis aeg päevast praegu on?")
-kell = ("Sisesta kellaaeg, mil sa kuskil olema pead (formaadis tunnid:minutid): ")
+sg.change_look_and_feel('DarkAmber')    # Add a touch of color
+# All the stuff inside your window.
+layout = [  [sg.Text('Tere tulemast meie ajaarvutusprogrammi!')],
+            [sg.Text('Et programmiga jätkata, vajuta Jätka. Et lahkuda, vajuta Lõpeta.')],
+            [sg.Button('Jätka'), sg.Button('Lõpeta')] ]
 
-if vajutati == "hommik":
-    a = ("Palju aega (minutites) planeerid sa kulutada voodist püsti tõusmisele? ")
-    b = ("Palju aega (minutites) planeerid sa kulutada duši all käimisele? ")
-    c = ("Palju aega (minutites) planeerid sa kulutada hammaste pesemisele? ")
-    d = ("Palju aega (minutites) planeerid sa kulutada muule kehahooldusele (kreemitamine jne)? ")
-    e = ("Palju aega (minutites) planeerid sa kulutada hommikusöögile? ")
-    f = ("Palju aega (minutites) planeerid sa kulutada nõude pesemisele/muudele koristustegevustele? ")
-    h = ("Palju aega (minutites) planeerid sa kulutada riietumisele? ")
-    i = ("Palju aega (minutites) planeerid sa kulutada meikimisele? ")
-    j = ("Palju aega (minutites) planeerid sa kulutada koti pakkimisele? ")
-    k = ("Palju aega (minutites) planeerid sa kulutada kohale jõudmisele? ")
-    l = ("Kui palju aega (minutites) kulub tegevustele, mida me Sinu käest ei küsinud? ")
-    summa = a + b + c + e + d + f + h + i + j + k + l
-    tunnid = summa // 60
-    minutid = summa - (tunnid * 60)
-    oigekell = kell.split(":")
-    valjatund = int(oigekell[0]) - tunnid
-    valjaminutid = int(oigekell[1]) - minutid
-    if valjatund < 0:
-        valjatund = 24 - abs(valjatund)
-    if valjaminutid < 0:
-        valjatund = valjatund - 1
-        valjaminutid = abs(valjaminutid)
+# Create the Window
+window = sg.Window('w0k3', layout)
+# Event Loop to process "events" and get the "values" of the inputs
+while True:
+    event, values = window.read()
+    if event in (None, 'Lõpeta'):   # if user closes window or clicks cancel
+        break
+        window.close()
+    if event in ("Jätka"):
+        window.close()
+        layout = [  [sg.Text('Vali, kas praegu on hommik, lõuna või õhtu.')],
+                    [sg.Radio('Hommik', key= 1, group_id= "grp"), sg.Radio('Lõuna', key = 2, group_id= "grp"), sg.Radio("Õhtu", key = 3, group_id= "grp")],
+                    [sg.Button('Jätka'), sg.Button('Lõpeta')] ]
+        window = sg.Window('wok3', layout)
+        event = window.read()
+
+        event, values = window.read()
+        if event in (None, "Lõpeta"):
+            break
+        else:
+           if event in ("Jätka"):
+               
+                
+
+
+            
+
+        
+
+
+
+
+
+
+
+
+
+
+
+# variandid = ["hommik", "lõuna", "õhtu"]
+# vajutati = easygui.choicebox("Mis aeg päevast praegu on?", choices = variandid)
+# kell = easygui.enterbox("Sisesta kellaaeg, mil sa kuskil olema pead (formaadis tunnid:minutid): ")
+
+# if vajutati == "hommik":
+#     a = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada voodist püsti tõusmisele? ", lowerbound = 0, upperbound = 10000)
+#     b = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada duši all käimisele? ", lowerbound = 0, upperbound = 10000)
+#     c = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada hammaste pesemisele? ", lowerbound = 0, upperbound = 10000)
+#     d = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada muule kehahooldusele (kreemitamine jne)? ", lowerbound = 0, upperbound = 10000)
+#     e = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada hommikusöögile? ", lowerbound = 0, upperbound = 10000)
+#     f = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada nõude pesemisele/muudele koristustegevustele? ", lowerbound = 0, upperbound = 10000)
+#     h = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada riietumisele? ", lowerbound = 0, upperbound = 10000)
+#     i = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada meikimisele? ", lowerbound = 0, upperbound = 10000)
+#     j = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada koti pakkimisele? ", lowerbound = 0, upperbound = 10000)
+#     k = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada kohale jõudmisele? ", lowerbound = 0, upperbound = 10000)
+#     l = easygui.integerbox(msg = "Kui palju aega (minutites) kulub tegevustele, mida me Sinu käest ei küsinud? ", lowerbound = 0, upperbound = 10000)
+#     summa = a + b + c + e + d + f + h + i + j + k + l
+#     tunnid = summa // 60
+#     minutid = summa - (tunnid * 60)
+#     oigekell = kell.split(":")
+#     valjatund = int(oigekell[0]) - tunnid
+#     valjaminutid = int(oigekell[1]) - minutid
+#     if valjatund < 0:
+#         valjatund = 24 - abs(valjatund)
+#     if valjaminutid < 0:
+#         valjatund = valjatund - 1
+#         valjaminutid = abs(valjaminutid)
     
         
     
-    (("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit." + 
-            "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
+#     easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit." + 
+#             "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
     
-if vajutati == "lõuna":
-    a = ("Palju aega (minutites) planeerid sa kulutada lõunasöögile? ")
-    b = ("Palju aega (minutites) planeerid sa kulutada koristamisele? ")
-    c = ("Palju aega (minutites) planeerid sa kulutada sarja vaatamisele? ")
-    d = ("Palju aega (minutites) planeerid sa kulutada enda korrastamisele? ")
-    e = ("Palju aega (minutites) kulutad sa koti kokku pakkimisele? ")
-    f = ("Palju aega (minutites) kulutad sa kohale jõudmisele? ")
-    h = ("Kui palju aega (minutites) kulub tegevustele, mida me Sinu käest ei küsinud? ")
-    summa = a + b + c + d + e + f + h
-    tunnid = summa // 60
-    minutid = summa - (tunnid * 60)
-    oigekell = kell.split(":")
-    valjatund = int(oigekell[0]) - tunnid
-    valjaminutid = int(oigekell[1]) - minutid
-    if valjatund < 0:
-        valjatund = 24 - abs(valjatund)
-    if valjaminutid < 0:
-        valjatund = valjatund - 1
-        valjaminutid = abs(valjaminutid)
+# if vajutati == "lõuna":
+#     a = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada lõunasöögile? ", lowerbound = 0, upperbound = 10000)
+#     b = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada koristamisele? ", lowerbound = 0, upperbound = 10000)
+#     c = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada sarja vaatamisele? ", lowerbound = 0, upperbound = 10000)
+#     d = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada enda korrastamisele? ", lowerbound = 0, upperbound = 10000) 
+#     e = easygui.integerbox(msg = "Palju aega (minutites) kulutad sa koti kokku pakkimisele? ", lowerbound = 0, upperbound = 10000)
+#     f = easygui.integerbox(msg = "Palju aega (minutites) kulutad sa kohale jõudmisele? ", lowerbound = 0, upperbound = 10000)
+#     h = easygui.integerbox(msg = "Kui palju aega (minutites) kulub tegevustele, mida me Sinu käest ei küsinud? ", lowerbound = 0, upperbound = 10000)
+#     summa = a + b + c + d + e + f + h
+#     tunnid = summa // 60
+#     minutid = summa - (tunnid * 60)
+#     oigekell = kell.split(":")
+#     valjatund = int(oigekell[0]) - tunnid
+#     valjaminutid = int(oigekell[1]) - minutid
+#     if valjatund < 0:
+#         valjatund = 24 - abs(valjatund)
+#     if valjaminutid < 0:
+#         valjatund = valjatund - 1
+#         valjaminutid = abs(valjaminutid)
     
-    (("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit." + 
-            "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
-    
-    
-if vajutati == "õhtu":
-    a = ("Palju aega (minutites) planeerid sa kulutada pesemisele? ")
-    b = ("Palju aega (minutites) planeerid sa kulutada õhtusöögile? ")
-    c = ("Palju aega (minutites) planeerid sa kulutada meigile? ")
-    d = ("Palju aega (minutites) planeerid sa kulutada riietumisele? ")
-    e = ("Palju aega (minutites) planeerid sa kulutada soojendamisele? ")
-    f = ("Palju aega (minutites) kulutad sa kohale jõudmisele? ")
-    h = ("Kui palju aega (minutites) kulub tegevustele, mida me Sinu käest ei küsinud? ")
-    summa = a + b + c + e + d + f + h
-    tunnid = summa // 60
-    minutid = summa - (tunnid * 60)
-    oigekell = kell.split(":")
-    valjatund = int(oigekell[0]) - tunnid
-    valjaminutid = int(oigekell[1]) - minutid
-    if valjatund < 0:
-        valjatund = 24 - abs(valjatund)
-    if valjaminutid < 0:
-        valjatund = valjatund - 1
-        valjaminutid = abs(valjaminutid)
-    
-    (("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit." + 
-            "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
+#     easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit." + 
+#             "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
     
     
-class GameGUI(object):
-
-    def __init__(self, root):
-        self.root = root
-
-        self.GameButton = Button(root, text="Arvuta aeg!", command=self.NewGame)
-        self.GameLabel = Label(root, text="Hommik", fg="blue", font=("Helvetica",16))
-
-        self.GameButton = Button(root, text="Arvuta aeg!", command=self.NewGame)
-        self.GameLabel = Label(root, text="Lõuna", fg="blue", font=("Helvetica",16))
-
-        self.GameButton = Button(root, text="Arvuta aeg!", command=self.NewGame)
-        self.GameLabel = Label(root, text="Õhtu", fg="blue", font=("Helvetica",16))
-
-        self.HelpButton = Button(root, text="Meie programmist", command=self.Help)
-        self.HelpLabel = Label(root, text="", fg="orange", font=("Helvetica",16))
-
-        self.ExitButton = Button(root, text="Välju",command=self.Exit)
-        self.ExitLabel = Label(root, text="Vajuta, et väljuda", fg="red", font=("Helvetica",16))
-
-        self.InstructionsLabel = Label(root, text="""
-            Taken from nrich.maths.org
-
-            This is a collection of games of skill for two players, both players have exactly the same information, chance plays no part,
-            and each game must terminate. There is always a 'winning strategy' and all the moves can be analysed mathematically. The only
-            advantage that either player can possibly have is to start or to play second. To work out how to win you need to start by
-            analysing the 'end game', and the losing position to be avoided, and then work back to earlier moves. Can you find the winning strategies?
-
-            The rules are simple. Start with any number of counters in any number of piles. Two players take turns to remove any number of
-            counters from a single pile. The winner is the player who takes the last counter.""", fg="black", font=("Calibri", 14))
-
-        self.ReturnMenu = Button(root, text="Return to Main Menu", command=self.MainMenu)
-
-        self.MainMenu()
-
-    def MainMenu(self):
-        self.RemoveAll()
-        self.GameButton.grid()
-        self.GameLabel.grid()
-        self.HelpButton.grid()
-        self.HelpLabel.grid()
-        self.ExitButton.grid()
-        self.ExitLabel.grid()
-
-    def NewGame(self):
-        self.GameButton.grid_remove()
-        self.GameLabel.grid_remove()
-        self.ExitButton.grid_remove()
-        self.ExitLabel.grid_remove()
-
-    def Help(self):
-        self.RemoveAll()
-
-        self.InstructionsLabel.grid()
-        self.ReturnMenu.grid()
-
-    def RemoveAll(self):
-        self.GameButton.grid_remove()
-        self.GameLabel.grid_remove()
-        self.HelpButton.grid_remove()
-        self.HelpLabel.grid_remove()
-        self.ExitButton.grid_remove()
-        self.ExitLabel.grid_remove()
-        self.InstructionsLabel.grid_remove()
-        self.ReturnMenu.grid_remove()
-
-    def Exit(self):
-        self.root.quit
-        sys.exit(0)
-
-
-if __name__ == '__main__':
-
-    root = Tk()
-    GameGUI = GameGUI(root)
-    root.mainloop()
+# if vajutati == "õhtu":
+#     a = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada pesemisele?", lowerbound = 0, upperbound = 10000)
+#     b = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada õhtusöögile? ",lowerbound = 0, upperbound = 10000)
+#     c = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada meigile? " , lowerbound = 0, upperbound = 10000)
+#     d = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada riietumisele? " , lowerbound = 0, upperbound = 10000)
+#     e = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada soojendamisele? " , lowerbound = 0, upperbound = 10000)
+#     f = easygui.integerbox(msg = "Palju aega (minutites) kulutad sa kohale jõudmisele? " , lowerbound = 0, upperbound = 10000)
+#     h = easygui.integerbox(msg = "Kui palju aega (minutites) kulub tegevustele, mida me Sinu käest ei küsinud? " ,lowerbound = 0, upperbound = 10000)
+#     summa = a + b + c + e + d + f + h
+#     tunnid = summa // 60
+#     minutid = summa - (tunnid * 60)
+#     oigekell = kell.split(":")
+#     valjatund = int(oigekell[0]) - tunnid
+#     valjaminutid = int(oigekell[1]) - minutid
+#     if valjatund < 0:
+#         valjatund = 24 - abs(valjatund)
+#     if valjaminutid < 0:
+#         valjatund = valjatund - 1
+#         valjaminutid = abs(valjaminutid)
+    
+#     easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit." + 
+#             "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
+    
+    
+    
