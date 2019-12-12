@@ -28,7 +28,7 @@ if vajutati == "Edasi":
             k = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada kohale jõudmisele? ", lowerbound = 0, upperbound = 10000)
             l = easygui.integerbox(msg = "Kui palju aega (minutites) kulub tegevustele, mida me Sinu käest ei küsinud? ", lowerbound = 0, upperbound = 10000)
 
-            fail.write(str(a) + "\n" + str(b) + "\n" + str(c) + "\n" + str(e) + "\n" + str(d) + "\n" + str(f) + "\n" + str(h) + "\n" 
+            fail.write(str(a) + "\n" + str(b) + "\n" + str(c) + "\n" + str(d) + "\n" + str(e) + "\n" + str(f) + "\n" + str(h) + "\n" 
                         + str(i) + "\n" + str(j) + "\n" + str(k) + "\n" + str(l))
             fail.close()
 
@@ -61,7 +61,7 @@ if vajutati == "Edasi":
             f = easygui.integerbox(msg = "Palju aega (minutites) kulutad sa kohale jõudmisele? ", lowerbound = 0, upperbound = 10000)
             h = easygui.integerbox(msg = "Kui palju aega (minutites) kulub tegevustele, mida me Sinu käest ei küsinud? ", lowerbound = 0, upperbound = 10000)
 
-            fail.write(str(a) + "\n" + str(b) + "\n" + str(c) + "\n" + str(e) + "\n" + str(d) + "\n" + str(f) + "\n" + str(h))
+            fail.write(str(a) + "\n" + str(b) + "\n" + str(c) + "\n" + str(d) + "\n" + str(e) + "\n" + str(f) + "\n" + str(h))
             fail.close()
 
             summa = a + b + c + d + e + f + h
@@ -94,7 +94,7 @@ if vajutati == "Edasi":
             f = easygui.integerbox(msg = "Palju aega (minutites) kulutad sa kohale jõudmisele? " , lowerbound = 0, upperbound = 10000)
             h = easygui.integerbox(msg = "Kui palju aega (minutites) kulub tegevustele, mida me Sinu käest ei küsinud? " ,lowerbound = 0, upperbound = 10000)
 
-            fail.write(str(a) + "\n" + str(b) + "\n" + str(c) + "\n" + str(e) + "\n" + str(d) + "\n" + str(f) + "\n" + str(h))
+            fail.write(str(a) + "\n" + str(b) + "\n" + str(c) + "\n" + str(d) + "\n" + str(e) + "\n" + str(f) + "\n" + str(h))
             fail.close()
 
             summa = a + b + c + e + d + f + h
