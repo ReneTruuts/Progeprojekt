@@ -16,7 +16,7 @@ if vajutati == "Edasi":
         if vajutati == "hommik":
             a = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada voodist püsti tõusmisele? ", lowerbound = 0, upperbound = 10000)
             b = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada duši all käimisele? ", lowerbound = 0, upperbound = 10000)
-            c = easygui.integerbox(msg = "Palju aega (minutites) planeerid3 sa kulutada hammaste pesemisele? ", lowerbound = 0, upperbound = 10000)
+            c = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada hammaste pesemisele? ", lowerbound = 0, upperbound = 10000)
             d = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada muule kehahooldusele (kreemitamine jne)? ", lowerbound = 0, upperbound = 10000)
             e = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada hommikusöögile? ", lowerbound = 0, upperbound = 10000)
             f = easygui.integerbox(msg = "Palju aega (minutites) planeerid sa kulutada nõude pesemisele/muudele koristustegevustele? ", lowerbound = 0, upperbound = 10000)
@@ -105,6 +105,8 @@ if vajutati == "Edasi":
                 valjaminutid = 60 + valjaminutid
             if valjaminutid == 0:
                 valjaminutid = str('00')
+            if valjaminutid < 10:
+                valjaminutid = str('0' + valjaminutid)
             
             easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit." + 
                     "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
@@ -128,6 +130,42 @@ if vajutati == "Edasi":
             tegevused = ['voodist püsti tõusmisele', 'duši all käimisele', 'hammaste pesemisele', 'muule kehahooldusele', 'hommikusöögile',
                          'nõude pesemisele/muudele koristustegevustele', 'riietumisele', 'meikimisele', 'koti pakkimisele',
                          'kohale jõudmisele', 'tegevustele, mida me Sinu käest ei küsinud']
+                         
+            tegur = round(float(hiljaks_formaadis / ajakulu), 1)
+            n = 0
+            kogu_tekst = str()
+            fail = open("andmed.txt", 'r')
+            for rida in fail:
+                if int(rida) != 0:
+                    uus_aeg = int(rida) * tegur
+                    tekst = str(tegevused[n].capitalize() + ' võid kulutada nüüd ' + str(uus_aeg) + ' minutit.' + '\n')
+                    kogu_tekst += tekst
+                n += 1
+            fail.close
+            easygui.msgbox(kogu_tekst)
+        
+        if vajutati == "lõuna":
+            
+            tegevused = ['lõunasöögile', 'koristamisele', 'sarja vaatamisele', 'enda korrastamisele', 'koti pakkimisele', 'kohale jõudmisele', 
+                         'tegevustele, mida me Sinu käest ei küsinud']
+                         
+            tegur = round(float(hiljaks_formaadis / ajakulu), 1)
+            n = 0
+            kogu_tekst = str()
+            fail = open("andmed.txt", 'r')
+            for rida in fail:
+                if int(rida) != 0:
+                    uus_aeg = int(rida) * tegur
+                    tekst = str(tegevused[n].capitalize() + ' võid kulutada nüüd ' + str(uus_aeg) + ' minutit.' + '\n')
+                    kogu_tekst += tekst
+                n += 1
+            fail.close
+            easygui.msgbox(kogu_tekst)
+
+        if vajutati == "õhtu":
+            
+            tegevused = ['pesemisele', 'õhtusöögile', 'meigile', 'riietumisele', 'soojendamisele', 'kohale jõudmisele',
+                         'tegevustele, mida me Sinu käest ei küsinud']
                          
             tegur = round(float(hiljaks_formaadis / ajakulu), 1)
             n = 0
