@@ -135,13 +135,13 @@ if vajutati == "Edasi":
                          'nõude pesemisele/muudele koristustegevustele', 'riietumisele', 'meikimisele', 'koti pakkimisele',
                          'kohale jõudmisele', 'tegevustele, mida me Sinu käest ei küsinud']
                          
-            tegur = round(float((ajakulu - hiljaks_formaadis) / ajakulu), 1)
+            tegur = float((ajakulu - hiljaks_formaadis) / ajakulu)
             n = 0
             kogu_tekst = str()
             fail = open("andmed.txt", 'r')
             for rida in fail:
                 if int(rida) != 0:
-                    uus_aeg = int(rida) * tegur
+                    uus_aeg = round(int(rida) * tegur, 0)
                     tekst = str(tegevused[n].capitalize() + ' võid kulutada nüüd ' + str(uus_aeg) + ' minutit.' + '\n')
                     kogu_tekst += tekst
                 n += 1
@@ -153,13 +153,13 @@ if vajutati == "Edasi":
             tegevused = ['lõunasöögile', 'koristamisele', 'sarja vaatamisele', 'enda korrastamisele', 'koti pakkimisele', 'kohale jõudmisele', 
                          'tegevustele, mida me Sinu käest ei küsinud']
                          
-            tegur = round(float((ajakulu - hiljaks_formaadis) / ajakulu), 1)
+            tegur = float((ajakulu - hiljaks_formaadis) / ajakulu)
             n = 0
             kogu_tekst = str()
             fail = open("andmed.txt", 'r')
             for rida in fail:
                 if int(rida) != 0:
-                    uus_aeg = int(rida) * tegur
+                    uus_aeg = round(int(rida) * tegur, 0)
                     tekst = str(tegevused[n].capitalize() + ' võid kulutada nüüd ' + str(uus_aeg) + ' minutit.' + '\n')
                     kogu_tekst += tekst
                 n += 1
@@ -171,13 +171,13 @@ if vajutati == "Edasi":
             tegevused = ['pesemisele', 'õhtusöögile', 'meigile', 'riietumisele', 'soojendamisele', 'kohale jõudmisele',
                          'tegevustele, mida me Sinu käest ei küsinud']
                          
-            tegur = round(float((ajakulu - hiljaks_formaadis) / ajakulu), 1)
+            tegur = float((ajakulu - hiljaks_formaadis) / ajakulu)
             n = 0
             kogu_tekst = str()
             fail = open("andmed.txt", 'r')
             for rida in fail:
                 if int(rida) != 0:
-                    uus_aeg = int(rida) * tegur
+                    uus_aeg = round(int(rida) * tegur, 0)
                     tekst = str(tegevused[n].capitalize() + ' võid kulutada nüüd ' + str(uus_aeg) + ' minutit.' + '\n')
                     kogu_tekst += tekst
                 n += 1
