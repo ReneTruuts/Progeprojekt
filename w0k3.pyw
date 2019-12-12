@@ -1,7 +1,7 @@
 import easygui
-variandid = ["Edasi", "Sulge programm"]
-vajutati = easygui.choicebox("Mida soovid programmiga teha?", choices = variandid)
-if vajutati == "Edasi":
+#variandid = ["Edasi", "Sulge programm"]
+#vajutati = easygui.choicebox("Mida soovid programmiga teha?", choices = variandid)
+#if vajutati == "Edasi":
 
 eesmärk = ["mis kell ärgata", "kuidas oma tegevusi uuesti planeerida"]
 valiti = easygui.choicebox("Kas tahad, et programm ütleks sulle, ", choices = eesmärk)
@@ -121,13 +121,29 @@ elif valiti == "kuidas oma tegevusi uuesti planeerida":
     ajakulu = 0
     for rida in fail:
         ajakulu += int(rida.strip())
+    fail.close()
 
     if vajutati == "hommik":
-        tegur = float(hiljaks_formaadis / ajakulu)
-
+        
+        tegevused = ['voodist püsti tõusmisele', 'duši all käimisele', 'hammaste pesemisele', 'muule kehahooldusele', 'hommikusöögile',
+                     'nõude pesemisele/muudele koristustegevustele', 'riietumisele', 'meikimisele', 'koti pakkimisele',
+                     'kohale jõudmisele', 'tegevustele, mida me Sinu käest ei küsinud']
+                     
+        tegur = round(float(hiljaks_formaadis / ajakulu), 1)
+        n = 0
+        kogu_tekst = str()
+        fail = open("andmed.txt", 'r')
+        for rida in fail:
+            if int(rida) != 0:
+                uus_aeg = int(rida) * tegur
+                tekst = str(tegevused[n].capitalize() + ' võid kulutada nüüd ' + str(uus_aeg) + ' minutit.' + '\n')
+                kogu_tekst += tekst
+            n += 1
+        fail.close
+        easygui.msgbox(kogu_tekst)
     
     
-#        easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit." + 
+#easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit." + 
 #                "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
 #if vajutati == "Sulge programm":
 #    exit   
