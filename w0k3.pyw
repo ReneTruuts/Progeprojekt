@@ -121,53 +121,26 @@ if vajutati == "Edasi":
         ajakulu = 0
         for rida in fail:
             ajakulu += int(rida.strip())
+        fail.close()
 
         if vajutati == "hommik":
-            tegur = float(hiljaks_formaadis / ajakulu)
-
-        
-        
-        easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit." + 
-                "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
-
-elif valiti == "kuidas oma tegevusi uuesti planeerida":
-
-    variandid = ["hommik", "lõuna", "õhtu"]
-    vajutati = easygui.choicebox("Mis aeg päevast praegu on?", choices = variandid)
-    hiljaks = easygui.enterbox("Sisesta, kui palju sa sisse magasid (formaadis hh:mm): ")
-    hiljaks_järjend = hiljaks.split(':')
-    hiljaks_formaadis = int(hiljaks_järjend[0])*60 + int(hiljaks_järjend[1])
-
-    fail = open("andmed.txt", 'r')
-    ajakulu = 0
-    for rida in fail:
-        ajakulu += int(rida.strip())
-    fail.close()
-
-    if vajutati == "hommik":
-        
-        tegevused = ['voodist püsti tõusmisele', 'duši all käimisele', 'hammaste pesemisele', 'muule kehahooldusele', 'hommikusöögile',
-                     'nõude pesemisele/muudele koristustegevustele', 'riietumisele', 'meikimisele', 'koti pakkimisele',
-                     'kohale jõudmisele', 'tegevustele, mida me Sinu käest ei küsinud']
-                     
-        tegur = round(float(hiljaks_formaadis / ajakulu), 1)
-        n = 0
-        kogu_tekst = str()
-        fail = open("andmed.txt", 'r')
-        for rida in fail:
-            if int(rida) != 0:
-                uus_aeg = int(rida) * tegur
-                tekst = str(tegevused[n].capitalize() + ' võid kulutada nüüd ' + str(uus_aeg) + ' minutit.' + '\n')
-                kogu_tekst += tekst
-            n += 1
-        fail.close
-        easygui.msgbox(kogu_tekst)
-    
-    
-#easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit." + 
-#                "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
-#if vajutati == "Sulge programm":
-#    exit   
+            
+            tegevused = ['voodist püsti tõusmisele', 'duši all käimisele', 'hammaste pesemisele', 'muule kehahooldusele', 'hommikusöögile',
+                         'nõude pesemisele/muudele koristustegevustele', 'riietumisele', 'meikimisele', 'koti pakkimisele',
+                         'kohale jõudmisele', 'tegevustele, mida me Sinu käest ei küsinud']
+                         
+            tegur = round(float(hiljaks_formaadis / ajakulu), 1)
+            n = 0
+            kogu_tekst = str()
+            fail = open("andmed.txt", 'r')
+            for rida in fail:
+                if int(rida) != 0:
+                    uus_aeg = int(rida) * tegur
+                    tekst = str(tegevused[n].capitalize() + ' võid kulutada nüüd ' + str(uus_aeg) + ' minutit.' + '\n')
+                    kogu_tekst += tekst
+                n += 1
+            fail.close
+            easygui.msgbox(kogu_tekst)
     
     #        easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit." + 
     #                "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
