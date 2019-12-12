@@ -135,7 +135,7 @@ if vajutati == "Edasi":
                          'nõude pesemisele/muudele koristustegevustele', 'riietumisele', 'meikimisele', 'koti pakkimisele',
                          'kohale jõudmisele', 'tegevustele, mida me Sinu käest ei küsinud']
                          
-            tegur = round(float(hiljaks_formaadis / ajakulu), 1)
+            tegur = round(float((ajakulu - hiljaks_formaadis) / ajakulu), 1)
             n = 0
             kogu_tekst = str()
             fail = open("andmed.txt", 'r')
@@ -153,7 +153,7 @@ if vajutati == "Edasi":
             tegevused = ['lõunasöögile', 'koristamisele', 'sarja vaatamisele', 'enda korrastamisele', 'koti pakkimisele', 'kohale jõudmisele', 
                          'tegevustele, mida me Sinu käest ei küsinud']
                          
-            tegur = round(float(hiljaks_formaadis / ajakulu), 1)
+            tegur = round(float((ajakulu - hiljaks_formaadis) / ajakulu), 1)
             n = 0
             kogu_tekst = str()
             fail = open("andmed.txt", 'r')
@@ -171,7 +171,7 @@ if vajutati == "Edasi":
             tegevused = ['pesemisele', 'õhtusöögile', 'meigile', 'riietumisele', 'soojendamisele', 'kohale jõudmisele',
                          'tegevustele, mida me Sinu käest ei küsinud']
                          
-            tegur = round(float(hiljaks_formaadis / ajakulu), 1)
+            tegur = round(float((ajakulu - hiljaks_formaadis) / ajakulu), 1)
             n = 0
             kogu_tekst = str()
             fail = open("andmed.txt", 'r')
