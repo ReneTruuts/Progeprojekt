@@ -3,10 +3,10 @@ variandid = ["Edasi", "Sulge programm"]
 vajutati = easygui.choicebox("Mida soovid programmiga teha?", choices = variandid)
 if vajutati == "Edasi":
 
-    eesmärk = ["mis kell ärgata", "kuidas oma tegevusi uuesti planeerida"]
+    eesmärk = ["mis kell alustada", "kuidas oma tegevusi uuesti planeerida"]
     valiti = easygui.choicebox("Kas tahad, et programm ütleks sulle, ", choices = eesmärk)
 
-    if valiti == "mis kell ärgata":
+    if valiti == "mis kell alustada":
 
         variandid = ["hommik", "lõuna", "õhtu"]
         vajutati = easygui.choicebox("Mis aeg päevast praegu on?", choices = variandid)
