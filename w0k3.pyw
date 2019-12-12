@@ -1,4 +1,7 @@
 import easygui
+variandid = ["Edasi", "Sulge programm"]
+vajutati = easygui.choicebox("Mida soovid programmiga teha?", choices = variandid)
+if vajutati == "Edasi":
 
 eesmärk = ["mis kell ärgata", "kuidas oma tegevusi uuesti planeerida"]
 valiti = easygui.choicebox("Kas tahad, et programm ütleks sulle, ", choices = eesmärk)
@@ -33,7 +36,7 @@ if valiti == "mis kell ärgata":
         oigekell = kell.split(":")
         valjatund = int(oigekell[0]) - tunnid
         valjaminutid = int(oigekell[1]) - minutid
-
+        
         if valjatund < 0:
             valjatund = 24 - abs(valjatund)
         if valjaminutid < 0:
@@ -94,7 +97,7 @@ if valiti == "mis kell ärgata":
         oigekell = kell.split(":")
         valjatund = int(oigekell[0]) - tunnid
         valjaminutid = int(oigekell[1]) - minutid
-
+        
         if valjatund < 0:
             valjatund = 24 - abs(valjatund)
         if valjaminutid < 0:
@@ -124,4 +127,8 @@ elif valiti == "kuidas oma tegevusi uuesti planeerida":
 
     
     
+#        easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit." + 
+#                "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
+#if vajutati == "Sulge programm":
+#    exit   
     
