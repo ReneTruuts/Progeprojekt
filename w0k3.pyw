@@ -44,6 +44,8 @@ if vajutati == "Edasi":
                 valjaminutid = 60 + valjaminutid
             if valjaminutid == 0:
                 valjaminutid = str('00')
+            if valjaminutid < 10:
+                valjaminutid = str('0') + str(valjaminutid)
             
             easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit." + 
                     "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
@@ -74,6 +76,8 @@ if vajutati == "Edasi":
                 valjaminutid = 60 + valjaminutid
             if valjaminutid == 0:
                 valjaminutid = str('00')
+            if valjaminutid < 10:
+                valjaminutid = str('0') + str(valjaminutid)
             
             easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit." + 
                     "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
@@ -106,7 +110,7 @@ if vajutati == "Edasi":
             if valjaminutid == 0:
                 valjaminutid = str('00')
             if valjaminutid < 10:
-                valjaminutid = str('0') + valjaminutid
+                valjaminutid = str('0') + str(valjaminutid)
             
             easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit." + 
                     "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
@@ -179,9 +183,7 @@ if vajutati == "Edasi":
                 n += 1
             fail.close
             easygui.msgbox(kogu_tekst)
-    
-    #        easygui.msgbox(("Sinu tegevusteks läheb kokku " + str(tunnid) + " tundi " + "ja " + str(minutid) + " minutit." + 
-    #                "Sa peaksid tegvusi alustama kell " + str(valjatund) + ":" + str(valjaminutid) + "." ))
+
 if vajutati == "Sulge programm":
     exit   
     
