@@ -1,6 +1,8 @@
 import easygui
+
+pilt = "kell.gif"
 variandid = ["Edasi", "Sulge programm"]
-vajutati = easygui.choicebox("Mida soovid programmiga teha?", choices = variandid)
+vajutati = easygui.buttonbox("                            Mida soovid programmiga teha?", choices = variandid, image = pilt)
 if vajutati == "Edasi":
 
     eesmärk = ["Mis kell alustada tegevustega?", "Kuidas oma tegevusi uuesti planeerida?"]
